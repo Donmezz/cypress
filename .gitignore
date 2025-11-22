@@ -1,0 +1,16 @@
+# macOS sistem dosyaları
+.DS_Store
+.Trashes
+*.swp
+
+# Node
+node_modules/
+package-lock.json
+
+# VSCode ayarları
+.vscode/
+
+# Kişisel dosyalar
+*.history
+*.zsh_sessions/
+*.CFUserTextEncoding

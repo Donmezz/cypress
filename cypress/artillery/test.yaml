@@ -1,0 +1,25 @@
+config:
+  target: "https://jsonplaceholder.typicode.com"
+  phases:
+    - duration: 60
+      arrivalRate: 5
+  defaults:
+    headers:
+      Content-Type: "application/json"
+
+scenarios:
+  - name: "JSONPlaceholder GET & POST"
+    flow:
+      - get:
+          url: "/posts/1"
+      - post:
+          url: "/posts"
+          json:
+            $ref: "payload.json"
+
+metrics:
+  response_time:
+    p95: 500
+    max: 1000
+  http:
+    2xx: ">95%"
